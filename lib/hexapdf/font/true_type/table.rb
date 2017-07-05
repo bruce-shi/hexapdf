@@ -32,6 +32,17 @@
 #++
 
 require 'hexapdf/error'
+require 'hexapdf/font/true_type/table/directory'
+require 'hexapdf/font/true_type/table/head'
+require 'hexapdf/font/true_type/table/cmap'
+require 'hexapdf/font/true_type/table/hhea'
+require 'hexapdf/font/true_type/table/hmtx'
+require 'hexapdf/font/true_type/table/loca'
+require 'hexapdf/font/true_type/table/maxp'
+require 'hexapdf/font/true_type/table/name'
+require 'hexapdf/font/true_type/table/post'
+require 'hexapdf/font/true_type/table/glyf'
+require 'hexapdf/font/true_type/table/os2'
 
 module HexaPDF
   module Font
@@ -41,20 +52,6 @@ module HexaPDF
       #
       # See: https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6.html
       class Table
-
-        autoload(:Directory, 'hexapdf/font/true_type/table/directory')
-        autoload(:Head, 'hexapdf/font/true_type/table/head')
-        autoload(:Cmap, 'hexapdf/font/true_type/table/cmap')
-        autoload(:Hhea, 'hexapdf/font/true_type/table/hhea')
-        autoload(:Hmtx, 'hexapdf/font/true_type/table/hmtx')
-        autoload(:Loca, 'hexapdf/font/true_type/table/loca')
-        autoload(:Maxp, 'hexapdf/font/true_type/table/maxp')
-        autoload(:Name, 'hexapdf/font/true_type/table/name')
-        autoload(:Post, 'hexapdf/font/true_type/table/post')
-        autoload(:Glyf, 'hexapdf/font/true_type/table/glyf')
-        autoload(:OS2,  'hexapdf/font/true_type/table/os2')
-
-
         # The time Epoch used in sfnt-formatted font files.
         TIME_EPOCH = Time.new(1904, 1, 1)
 

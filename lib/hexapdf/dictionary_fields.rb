@@ -119,7 +119,6 @@ module HexaPDF
       # Returns the array with valid types for this field.
       def type
         return @type if @type_mapped
-        @type_mapped = true
         @type.concat(Array(@converter.additional_types))
         @type.map! do |type|
           if type.kind_of?(Symbol)
@@ -129,6 +128,7 @@ module HexaPDF
           end
         end
         @type.uniq!
+        @type_mapped = true
         @type
       end
 
